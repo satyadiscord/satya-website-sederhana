@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    grid-template-areas: 
+    "item item item1"
+    "item item item2";
+    gap: 10px;
+}
+
+.item {
+    background-color: lightskyblue;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
