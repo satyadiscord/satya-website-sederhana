@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            arial: 'arial'
+          }
+        }
+      }
+    }
+  </script>
+  <title>Tailwind CSS | Flex Box</title>
+  <style type="text/tailwindcss">
+    .bar-lis #bar1, 
+    .bar-lis #bar2,
+    .bar-lis #bar3 {
+      transition: 0.3s ease-in;
+    }
+      .change #bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+    
+    
+    .change #bar2 {
+        opacity: 0;
+    }
+    
+    
+    .change #bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+    }
+
+    .toggle-circle {
+      @apply transition-transform ease-in-out duration-300;
+    }
+
+    #toggle:checked ~ label div.toggle-circle {
+      @apply translate-x-5;
+    }
+    
+  </style>
+</head>
+<body class="dark:bg-slate-800 dark:text-white">
+    <div class="container shadow-lg mx-auto p-10 border rounded-xl">
+        <!-- pembuatan nav mobile -->
+        <div class="bg-yellow-500 p-5 flex items-center mb-5 rounded-md">
+            <h2 class="font-bold font-arial text-white">Name <span class="text-purple-500">Website</span></h2>
+            <ul class="hidden lg:flex lg:ml-auto lg:w-[300px] lg:justify-between lg:font-sans lg:font-semibold lg:text-gray-800">
+                <li class="hover:text-gray-200"><a href="#">Home</a></li>
+                <li class="hover:text-gray-200"><a href="#">About</a></li>
+                <li class="hover:text-gray-200"><a href="#">Gallery</a></li>
+                <li class="hover:text-gray-200"><a href="#">Contact</a></li>
+            </ul>
+            <div id="menu" class="bar-lis ml-auto lg:hidden flex flex-col gap-2 cursor-pointer" onclick="myMenu(this)">
+              <span id="bar1" class="w-[35px] h-[5px] bg-black rounded-xl"></span>
+              <span id="bar2" class="w-[35px] h-[5px] bg-black rounded-xl"></span>
+              <span id="bar3" class="w-[35px] h-[5px] bg-black rounded-xl"></span>
+            </div>
+        </div>
+        <!-- pembuatan nav mobile selesai -->
+
+        <!-- Membuat Home Page Dimulai -->
+        <section class="container p-7 flex flex-col-reverse gap-3 justify-center items-center md:flex-row">
+            <div id="content1" class="container p-5 lg:w-[700px]">
+                <h3 class="font-bold text-lg font-arial mb-3 lg:text-3xl">Welcome To My <span class="text-sky-700 dark:text-sky-400">Website</span></h3>
+                <p class="font-semibold font-sans text-sm text-gray-700 mb-4 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem qui molestiae explicabo facilis at porro exercitationem impedit velit, numquam similique earum labore, officiis fugiat doloribus odio obcaecati fugit aut rerum quia, quidem incidunt sunt. Odit autem, nisi, eligendi praesentium voluptatem atque totam earum eum magnam delectus repellendus sit maxime, quis ducimus ex soluta natus illum?</p>
+                <button class="w-300px px-8 py-2 bg-green-500 rounded-xl font-bold text-white hover:bg-green-600 dark:shadow-md dark:hover:bg-transparent dark:hover:shadow-green-600">Go!</button>
+            </div>
+            <div id="content2" class="container p-5 lg:w-[700px]"><img src="img/vector1.png" width="500px"></div>
+        </section>
+        <!-- Membuat Home Page Selesai -->
+
+        <hr class="mt-16 mb-14">
+
+        <!-- pembuatan dark mode dimulai -->
+        <div class="flex justify-center mb-10">
+          <span class="text-sm mr-2">Light</span>
+          <input type="checkbox" id="toggle" class="hidden">
+          <label for="toggle">
+            <div class="w-9 h-5 bg-slate-500 rounded-full cursor-pointer flex items-center">
+                <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+              </div>
+          </label>
+          <span class="text-sm ml-2">Dark</span>
+        </div>
+      <!-- pembuatan dark mode selesai -->
+        
+        <!-- Membuat Gallery Dimulai -->
+        <section class="container p-10 border rounded-xl lg:columns-3 md:columns-2">
+            <img src="https://source.unsplash.com/400x200?person" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+            <img src="https://source.unsplash.com/400x200?laptop" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+            <img src="https://source.unsplash.com/400x200?computer" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+            <img src="https://source.unsplash.com/400x200?monitor" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+            <img src="https://source.unsplash.com/400x200?nature" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+            <img src="https://source.unsplash.com/400x200?flowers" alt="unplash" class="shadow-lg bg-cover bg-center mb-6 rounded-lg hover:scale-75 transition delay-75">
+        </section>
+        <!-- Membuat Gallery Selesai -->
+        
+        <hr class="mt-36 mb-36">
+        
+        <!-- membuat komentar dimulai -->
+        <section class="container p-10 border rounded-lg flex justify-center items-center flex-col gap-4 lg:flex-row">
+          <div class="border p-5 shadow-md bg-red-500 rounded-lg hover:scale-90 transition delay-75">
+            <img src="img/man.png" alt="flaticon" width="70px" class="shadow-md rounded-[50%] mx-auto mb-3">
+            <p class="text-center font-mono text-sm text-gray-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt recusandae inventore error autem quia cupiditate ex, officiis laboriosam vitae excepturi voluptates, dolorem esse tenetur obcaecati? Possimus quia provident eum minima?</p>
+          </div>
+            <div class="border p-5 shadow-md bg-green-500 rounded-lg hover:scale-90 transition delay-75">
+                <img src="img/doctor.png" alt="flaticon" width="70px" class="shadow-md rounded-[50%] mx-auto mb-3">
+                <p class="text-center font-mono text-sm text-gray-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt recusandae inventore error autem quia cupiditate ex, officiis laboriosam vitae excepturi voluptates, dolorem esse tenetur obcaecati? Possimus quia provident eum minima?</p>
+            </div>
+            <div class="border p-5 shadow-md bg-yellow-500 rounded-lg hover:scale-90 transition delay-75">
+                <img src="img/woman.png" alt="flaticon" width="70px" class="shadow-md rounded-[50%] mx-auto mb-3">
+                <p class="text-center font-mono text-sm text-gray-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt recusandae inventore error autem quia cupiditate ex, officiis laboriosam vitae excepturi voluptates, dolorem esse tenetur obcaecati? Possimus quia provident eum minima?</p>
+            </div>
+        </section>
+        <!-- membuat komentar selesai -->
+        
+        <hr class="mt-36 mb-36">
+        
+        <!-- membuat display grid start -->
+        <div class="container p-2 font-inter grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4 md:p-4">
+          <h2 class="font-semibold text-base text-gray-700 md:col-start-4 md:row-start-2 md:flex md:justify-center md:items-center dark:text-gray-300">Welcome To My Website</h2>
+          <span class="text-base font-bold text-gray-600 tracking-wide md:col-start-2 md:row-start-2 md:flex md:flex-col md:justify-end dark:text-gray-400">@satya</span>
+          <div class="bg-transparent aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden group relative cursor-pointer">
+            <div class="w-full h-full bg-[url('img/person1.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent md:col-start-3 aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden cursor-pointer group relative">
+            <div class="w-full h-full bg-[url('img/person2.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden group relative cursor-pointer">
+            <div class="w-full h-full bg-[url('img/person3.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden group relative cursor-pointer">
+            <div class="w-full h-full bg-[url('img/person4.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden group relative cursor-pointer">
+            <div class="w-full h-full bg-[url('img/person5.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent md:col-start-2 aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden cursor-pointer group relative">
+            <div class="w-full h-full bg-[url('img/person6.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent md:col-start-4 aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden cursor-pointer group relative">
+            <div class="w-full h-full bg-[url('img/person7.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden group relative cursor-pointer">
+            <div class="w-full h-full bg-[url('img/person8.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent md:col-start-3 aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden cursor-pointer group relative">
+            <div class="w-full h-full bg-[url('img/person9.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+          <div class="bg-transparent md:col-start-3 aspect-[4/3] rounded-md shadow-md md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden  cursor-pointer group relative">
+            <div class="w-full h-full bg-[url('img/person10.jpg')] bg-cover bg-center group-hover:scale-125 transition delay-100"></div>
+          </div>
+        </div>
+        <!-- membuat display grid end -->
+        
+    </div>
+
+    <!-- Script JS -->
+    <script>
+      function myMenu(x) {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("change");
+      }
+
+      const checkbox = document.querySelector("#toggle");
+      const html = document.querySelector("html");
+
+      checkbox.addEventListener("click", function() {
+        if(checkbox.checked) {
+          html.classList.add("dark");
+        } else {
+          html.classList.remove("dark");
+        }
+      });
+        
+    </script>
+</body>
+</html>

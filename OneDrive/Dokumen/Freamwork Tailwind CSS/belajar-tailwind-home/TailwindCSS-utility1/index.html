@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             fontFamily: {
+                lobs: ["'Lobster', sans-serif"]
+             },
+            },
+          },
+        };
+      </script>
+    <title>TailwindCSS | Utility</title>
+</head>
+<body class="bg-slate-400">
+    <center>
+        <h1 class="text-2xl font-mono text-red-600 shadow">Belajar TailwindCSS Utility 1</h1>
+    
+        <section class="section-spacing bg-lime-400 p-10 border-yellow-400 border-4">
+            <h2 class="font-bold">Spacing</h2>
+            <div class="marginTop mt-28">
+                <div class="bg-white font-semibold border-yellow-400 border-4 m-1">Margin</div>
+                <div class="bg-cyan-400 font-semibold py-5 border-yellow-400 border-4">Padding</div>
+            </div>
+        </section>
+
+
+        <!-- membuat width -->
+        <section class="bg-yellow-700 mt-14 border-red-600 border-4">
+            <h2 class="font-bold">Sizing</h2>
+            <div>
+                <div class="w-32 h-32 bg-lime-500 border-white border-4">Kotak 1</div>
+            </div>
+        </section>
+
+        <section class="bg-cyan-700 mt-28 border-green-500 border-4">
+            <h2 class="mb-2 font-lobs text-2xl tracking-wide">Typography</h2>
+            <p class="-mt-2 mb-8 text-xs font-mono font-bold text-gray-400">By Satya Wiguna, 1 Maret 2024</p>
+            <p class="mb-8 font-mono text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error explicabo qui et voluptatibus iure. Reprehenderit placeat similique odio velit aspernatur, enim pariatur! Laborum officia numquam, neque aspernatur fugit praesentium ipsa, quae illum accusantium ducimus nisi commodi omnis sapiente rem suscipit, magni facere vitae facilis esse maxime quaerat quas ratione?</p>
+            <p class="mb-8 font-mono text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis ut culpa repellendus laudantium repudiandae ex quidem. Iusto ab adipisci repudiandae!</p>
+        </section>
+    </center>
+</body>
+</html>

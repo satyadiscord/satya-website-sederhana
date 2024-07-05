@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+            width: {
+                800: '800px',
+            },
+            fontFamily: {
+                lobs: ["'Lobster'"],
+                arial: [" 'arial' "],
+            },
+            boxShadow: {
+              bayangan: "0px 3px 4px rgba(0,0,0,0.4)",
+            },
+        },
+      },
+    };
+  </script>
+  <title>TailwindCSS | Utilty</title>
+  <style type="text/tailwindcss">
+    .toggle-circle {
+      @apply transition-transform ease-in-out duration-300;
+    }
+
+    #toggle:checked ~ label div.toggle-circle {
+      @apply translate-x-5;
+    }
+  </style>
+</head>
+<body class="dark:bg-slate-800 dark:text-slate-200">
+  <div id="container" class="w-800 mx-auto my-5 p-[18px] shadow-xl shadow-[rgba(0,0,0,0.4)]">
+      <!-- pembuatan teks lorem dimulai -->
+        <section id="text-lorem">
+            <h1 class="text-4xl font-lobs tracking-wider ml-7 mb-11 text-center">Lorem Ipsum</h1>
+            <p class="text-center -mt-11 ml-10 text-sm font-lobs text-gray-500">By Satya, 1 Maret 2024</p>
+            <p class="mb-8 p-5 text-cente">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus eos, adipisci perferendis odio consectetur assumenda incidunt mollitia, facilis odit vel esse et obcaecati, voluptate quisquam non accusantium! Porro rem minus vel libero placeat soluta quia, laboriosam tempore voluptatum fugiat provident ea magnam ex pariatur eum quisquam dolorem sapiente error.</p>
+            <p class="mb-8 p-5 text-center text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae omnis quam magni repellat at expedita dicta nam facere alias cum.</p>
+            <p class="mb-8 p-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint pariatur voluptatum nobis fugit quas veniam voluptate. Voluptatibus possimus nihil doloremque tempore, iure repellendus nisi reprehenderit quibusdam qui sapiente, nam voluptatum neque, molestiae sequi sed debitis.</p>
+        </section>
+      <!-- pembuatan teks lorem selesai -->
+
+      <!-- pembuatan gambar fixed dimulai -->
+        <section id="card" class="p-16">
+            <div id="kot-card" class="w-[630px] h-[300px] overflow-y-scroll bg-slate-600 mx-auto bg-fixed mb-[180px] rounded-lg bg-cover bg-center shadow-xl shadow-[rgba(0,0,0,0.4)]" style="background-image: url('https://source.unsplash.com/1000x600?nature');">
+                <p class="p-7 text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis exercitationem nobis ea cupiditate quis cum porro doloremque maxime voluptatem, nihil corrupti dolores accusantium molestiae ullam. Laboriosam omnis totam molestias, facilis cum harum minima eos est exercitationem laudantium quasi aliquid voluptate hic numquam dolorem! Nostrum accusamus alias dolor, laudantium repudiandae aliquid atque reprehenderit possimus ullam perspiciatis sit aspernatur exercitationem voluptatibus quidem impedit maxime magnam enim illum. Illum nulla ut id corrupti quod est, voluptates ad minus commodi eum quisquam hic praesentium nisi. Nihil quae aspernatur quis. Eaque harum voluptates magni repellat recusandae pariatur facere id fugit quaerat, ducimus assumenda? Veritatis quod cum quam quis molestias deleniti obcaecati consequuntur tempora, nam corrupti vel sed sequi officia eligendi, et voluptates saepe atque ad? Quia tempore culpa nihil voluptas ad consequuntur iure autem provident.</p>
+            </div>
+
+            <div id="kot-card2" class="w-[630px] h-[300px] bg-slate-600 mx-auto bg-fixed bg-cover bg-center rounded-lg shadow-xl shadow-[rgba(0,0,0,0.4)]" style="background-image: url('img/bunga.jpg');"></div>
+          </section>
+        <!-- pembuatan gambar fixed selesai -->
+          
+          <hr class="mt-2">
+
+        <!-- pembuatan dark mode dimulai -->
+          <div class="flex justify-center mt-10">
+            <span class="text-sm mr-2">Light</span>
+            <input type="checkbox" id="toggle" class="hidden">
+            <label for="toggle">
+              <div class="w-9 h-5 bg-slate-500 rounded-full cursor-pointer flex items-center">
+                  <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+                </div>
+            </label>
+            <span class="text-sm ml-2">Dark</span>
+          </div>
+        <!-- pembuatan dark mode selesai -->
+
+          <section id="button">
+            <div id="positionBtn" class=" w-[130px] flex flex-col justify-center items-center mx-auto p-5">
+            <!-- pembuatan button dimulai -->
+              <button class="my-14 bg-yellow-400 px-5 py-2 rounded-lg text-white shadow-bayangan font-bold font-arial hover:bg-yellow-500 active:bg-yellow-600 focus:ring focus:ring-yellow-300 dark:bg-slate-300 dark:hover:bg-slate-500 dark:text-slate-800 dark:hover:text-slate-400">Save</button>
+            <!-- pembuatan button selesai -->
+
+            <!-- pembuatan card sederhana dimulai -->
+              <div class="w-[630px] border-[3px] p-7 rounded-lg hover:bg-blue-400 dark:hover:bg-slate-300 group selection:bg-lime-400 selection:text-slate-800 font-serif mb-32">
+                <h5 class="font-semibold text-slate-700 group-hover:text-white dark:group-hover:text-slate-700 mb-12">My Card</h5>
+                <p class="text-slate-600 group-hover:text-white dark:group-hover:text-slate-500 first-line:uppercase first-line:tracking-widest first-letter:text-8xl first-letter:float-left first-letter:mr-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit dicta perferendis molestiae magnam mollitia, nulla quam repellat aut, quod itaque perspiciatis repudiandae! Veritatis aspernatur ipsa debitis voluptatibus ratione dolores est nemo corporis vero culpa quaerat, perferendis porro. Et cupiditate libero doloribus aliquam atque magni, harum sint obcaecati vitae totam.</p>
+              </div>
+            <!-- pembuatan card sederhana selesai -->
+
+            <!-- pembuatan email & password dimulai -->
+              <div class="w-[630px] border-[3px] p-7 rounded-lg">
+                <form>
+                  <label for="email">
+                    <span class="font-arial font-semibold ml-[10px] block mb-4 text-slate-600 after:content-['*'] after:text-pink-700 after:ml-[3px]">Email</span>
+                    <input type="text" id="email" name="email" placeholder="Masukan Email..." class="py-4 px-3 w-full border-[2px] rounded-xl mb-6 font-mono shadow-bayangan dark:text-slate-900 focus:outline-none focus:ring-1 focus:ring-purple-700 focus:border-purple-700">
+                  </label>
+
+                  <label for="pass">
+                    <span class="font-arial font-semibold ml-[10px] block mt-20 mb-4 text-slate-600">Password</span>
+                    <input type="password" id="pass" name="pass" placeholder="Masukan Password..." class="py-4 px-3 w-full border-[2px] rounded-xl font-mono shadow-bayangan dark:text-slate-900 focus:outline-none focus:ring-1 focus:ring-purple-700 focus:border-purple-700">
+                  </label>
+                </form>
+              </div>
+            <!-- pembuatan email & passowrd Selesai -->
+            </div>
+          </section>
+
+          <hr class="mt-8 mb-16">
+          
+          <!-- pembuatan animation/transform dimulai -->
+          <section class="flex justify-center gap-8">
+            <div class="w-40 h-40 bg-transparent group">
+              <div class="w-40 h-40 bg-purple-800 shadow-lg rounded-lg group-hover:bg-pink-700 group-hover:rotate-90 group-hover:-translate-x-32 transition duration-1000 group-hover:scale-110"></div>
+            </div>
+
+            <div class="w-40 h-40 bg-transparent group">
+              <div class="w-40 h-40 bg-purple-600 shadow-lg rounded-lg group-hover:rotate-90 group-hover:translate-x-32 group-hover:scale-110 group-hover:bg-pink-700 transition duration-1000 ease-out"></div>
+            </div>
+
+            <div class="w-40 h-40 bg-purple-700 shadow-lg rounded-lg animate-spin"></div>
+          </section>
+        <!-- pembuatan animation/transform selesai -->
+
+        <hr class="mt-16 mb-16">
+        
+        <section class="container flex justify-center">
+          <div id="hilangkan" class="border shadow-lg rounded-lg p-7 relative">
+            <div class="w-10 h-10 bg-pink-200 rounded-full flex absolute -top-4 -right-4 cursor-pointer animate-pulse"><span class="m-auto">❌</span></div>
+            <img src="img/manusia.jpg" alt="motor" width="100px" class="float-left mr-4 rounded-lg">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore illum velit aliquam voluptatem sint, praesentium earum est tempore et modi laboriosam, harum sequi hic inventore dolorum neque aperiam saepe exercitationem, odio tempora obcaecati odit dolore amet reprehenderit. Praesentium corporis magnam quos recusandae consequuntur, quae repellat vitae sunt nesciunt, animi expedita.</p>
+          </div>
+        </section>
+
+        <div class="container p-10 border rounded-lg shadow-lg mt-16 mx-auto columns-3">
+          <img src="https://source.unsplash.com/600x400?person" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+          <img src="https://source.unsplash.com/600x400?laptop" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+          <img src="https://source.unsplash.com/600x400?computer" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+          <img src="https://source.unsplash.com/600x400?monitor" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+          <img src="https://source.unsplash.com/600x400?nature" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+          <img src="https://source.unsplash.com/600x400?flowers" alt="unplash" class="bg-cover bg-center mb-6 rounded-lg hover:scale-125 transition delay-75">
+        </div>
+
+        <hr class="mt-16 mb-16">
+
+        <div class="container p-6 font-arial">
+          <h3 class="text-4xl font-bold text-slate-800 mb-4 dark:text-slate-100">Sa<span class="text-purple-700">tya</span> Wiguna</h3>
+          <img src="img/laptops.jpg" alt="macbook" width="500px" class="rounded-xl shadow-lg">
+          <h2 class="text-2xl mt-2 font-semibold text-slate-800 dark:text-slate-100">Lets <span class="text-pink-700 underline underline-offset-[6px]">Study</span> With Satya Wiguna!</h2>
+          <p class="mt-5 text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem animi provident illo soluta, velit, laudantium totam facilis impedit exercitationem expedita, ab eligendi deleniti est similique veritatis ex eaque labore a perferendis optio quia ipsa quam. Necessitatibus, iste animi? Similique vitae quae iusto. Debitis ad vero numquam molestiae unde consequuntur neque dolores? Maiores recusandae in numquam nostrum necessitatibus, culpa ipsa obcaecati distinctio tempore aliquam neque veritatis molestias ut. Vero, asperiores nulla.</p>
+          <div class="mt-7">
+            <a href="#" class="inline-block px-7 py-4 uppercase font-semibold text-sm tracking-widest text-white bg-purple-600 rounded-xl border border-purple-950 shadow-lg hover:shadow-purple-500">Follow My Instagram</a>
+          </div>
+        </div>
+
+      </div>
+
+
+  <!-- Script JS Dark Mode -->
+  <script>
+    const checkbox = document.querySelector("#toggle");
+    const html = document.querySelector("html");
+
+    checkbox.addEventListener("click", function() {
+      if(checkbox.checked) {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const hilangkan = document.getElementById("hilangkan");
+      const tombolSilang = hilangkan.querySelector(".bg-pink-200");
+    
+      tombolSilang.addEventListener("click", function() {
+        hilangkan.style.display = "none";
+      });
+    });
+    
+
+  </script>
+</body>
+</html>
